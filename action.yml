@@ -3,13 +3,15 @@ description: "GitHub Action that publishes packages to JFrog Artifactory"
 inputs:
   repository-type:  
     required: true
+  jf-env-mondo192:
+    required: true
 runs:
   using: "composite"
   steps:
     - name: Setup JFrog CLI
       uses: jfrog/setup-jfrog-cli@v3.4.0
       env:
-        JF_ENV_MONDO192: ${{ secrets.JF_ENV_MONDO192 }}
+        JF_ENV_MONDO192: ${{ inputs.jf-env-mondo192 }}
       with:
         version: latest
     - name: Is NPM Package?

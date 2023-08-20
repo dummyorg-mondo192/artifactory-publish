@@ -8,6 +8,7 @@ jobs:
       - uses: ./  
         with:
           repository-type: "npm"
+          jf-env-mondo192: ${{ secrets.JF_SECRET_ENV_MONDO192 }}
 
           
 
