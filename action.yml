@@ -15,8 +15,13 @@ runs:
       with:
         version: latest
     - name: Is NPM Package?
-      if: ${{ tolower(inputs.repository-type) == 'npm' }}
+      if: ${{ inputs.repository-type == 'npm' }}
       run: |
         echo "Publishing NPM Package"
+      shell: bash
+    - name: Is Yarn Package?
+      if: ${{ inputs.repository-type == 'yarn' }}
+      run: |
+        echo "Publishing Yarn Package"
       shell: bash
             
