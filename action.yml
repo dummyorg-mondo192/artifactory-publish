@@ -1,23 +1,19 @@
-name: 'Hello World'
-description: 'Greet someone'
+name: "Artifactory Publish"
+description: "GitHub Action that publishes packages to JFrog Artifactory"
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  repository-type:  
     required: true
-    default: 'World'
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
-    - id: random-number-generator
-      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
-      shell: bash
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash
-    - run: goodbye.sh
-      shell: bash
+    - name: Setup JFrog CLI
+      uses: jfrog/setup-jfrog-cli@v3.4.0
+      env:
+        JF_ENV_MONDO192: ${{ secrets.JF_ENV_MONDO192 }}
+      with:
+        version: latest
+    - name: Is NPM Package?
+      if: ${{ inputs.repository-type == "npm" }}
+      run: |
+        echo "Publishing NPM Package"
+            
