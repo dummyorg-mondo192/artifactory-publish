@@ -16,7 +16,7 @@ runs:
         version: latest
     - name: Is NPM Package?
       if: ${{ inputs.repository-type == 'npm' }}
-      uses: ./artifactory-publish/npm
+      uses: dummyorg-mondo192/artifactory-publish/npm@main
     - name: Is Yarn Package?
       if: ${{ inputs.repository-type == 'yarn' }}
       run: |
