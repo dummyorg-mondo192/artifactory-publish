@@ -13,7 +13,7 @@ runs:
       with:
         version: latest
     - name: Is NPM Package?
-      if: ${{ inputs.repository-type == "npm" }}
+      if: ${{ inputs.repository-type == 'npm' }}
       run: |
         echo "Publishing NPM Package"
             
