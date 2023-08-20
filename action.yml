@@ -18,4 +18,5 @@ runs:
       if: ${{ inputs.repository-type == 'npm' }}
       run: |
         echo "Publishing NPM Package"
+      shell: bash
             
