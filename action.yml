@@ -17,7 +17,6 @@ runs:
     - name: Is NPM Package?
       if: ${{ inputs.repository-type == 'npm' }}
       uses: ./artifactory-publish/npm
-      shell: bash
     - name: Is Yarn Package?
       if: ${{ inputs.repository-type == 'yarn' }}
       run: |
