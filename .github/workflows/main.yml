@@ -1,7 +1,7 @@
 on: [push]
 
 jobs:
-  main:
+  npm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -9,6 +9,14 @@ jobs:
         with:
           repository-type: "npm"
           jf-env-mondo192: ${{ secrets.JF_SECRET_ENV_MONDO192 }}
+  yarn:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./        
+        with:
+          repository-type: "yarn"
+          jf-env-mondo192: ${{ secrets.JF_SECRET_ENV_MONDO192 }}
         
-          
+                 
 
