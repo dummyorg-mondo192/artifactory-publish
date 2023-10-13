@@ -9,5 +9,5 @@ runs:
   using: "composite"
   steps:
     - name: Publish NPM Package
-      if: ${{ inputs.repository-type == "npm" }}
+      if: ${{ inputs.repository-type == 'npm' }}
       uses: ./npm
