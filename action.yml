@@ -1,25 +1,13 @@
 name: "Artifactory Publish"
 description: "GitHub Action that publishes packages to JFrog Artifactory"
+
 inputs:
   repository-type:  
     required: true
-  jf-env-mondo192:
-    required: true
+
 runs:
   using: "composite"
   steps:
-    - name: Setup JFrog CLI
-      uses: jfrog/setup-jfrog-cli@v3.4.0
-      env:
-        JF_ENV_MONDO192: ${{ inputs.jf-env-mondo192 }}
-      with:
-        version: latest
-    - name: Is NPM Package?
-      if: ${{ inputs.repository-type == 'npm' }}
-      uses: dummyorg-mondo192/artifactory-publish/npm@main
-    - name: Is Yarn Package?
-      if: ${{ inputs.repository-type == 'yarn' }}
-      run: |
-        echo "Publishing Yarn Package"
-      shell: bash
-            
+    - name: Publish NPM Package
+      if: ${{ inputs.repository-type == "npm" }}
+      uses: ./npm
