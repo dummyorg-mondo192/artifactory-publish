@@ -8,6 +8,9 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
     - name: Publish NPM Package
       if: ${{ inputs.repository-type == 'npm' }}
       uses: ./npm
