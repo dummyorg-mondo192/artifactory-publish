@@ -17,5 +17,4 @@ runs:
         fetch-depth: 1
     
     - if: ${{ inputs.artifact-type == 'npm' }}
-      uses: ./npm 
-      shell: bash
+      uses: ./artifactory-publish/npm

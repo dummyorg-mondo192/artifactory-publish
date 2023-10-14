@@ -1,4 +1,4 @@
 steps:    
-  - if: ${{ inputs.artifact-type == 'npm' }}
-    uses: ./npm 
+  - name: Publish NPM Package
+    run: echo "Publishing NPM Package"
     shell: bash
