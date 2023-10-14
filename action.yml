@@ -27,6 +27,6 @@ jobs:
         with:
           version: "2.45.0"
       
-      - if: ${{ inputs.repository-type == 'npm '}}
+      - if: ${{ inputs.repository-type == 'npm' }}
         uses: ./npm
     
