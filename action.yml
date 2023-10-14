@@ -18,3 +18,4 @@ runs:
     
     - if: ${{ inputs.artifact-type == 'npm' }}
       uses: ./npm 
+      shell: bash
