@@ -16,6 +16,5 @@ runs:
       with:
         fetch-depth: 1
     
-    - name: Echo artifact-type
-      run: echo "${{ inputs.artifact-type }}"
-      shell: bash
+    - if: ${{ inputs.artifact-type == "npm" }}
+      uses: ./npm 
