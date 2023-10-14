@@ -16,5 +16,5 @@ runs:
       with:
         fetch-depth: 1
     
-    - if: ${{ inputs.artifact-type == "npm" }}
+    - if: ${{ inputs.artifact-type == 'npm' }}
       uses: ./npm 
