@@ -18,3 +18,4 @@ runs:
     
     - name: Echo artifact-type
       run: echo "${{ inputs.artifact-type }}"
+      shell: bash
