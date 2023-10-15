@@ -1,0 +1,13 @@
+name: Setup NPM
+
+on: 
+    pull_request: 
+        types: [closed, opened, synchronize]
+    workflow_dispatch: 
+
+jobs:
+    npm:
+        runs-on: ubuntu-latest
+        steps:
+            - name: NPM Publish
+              run: echo "Hello from Setup NPM Action"

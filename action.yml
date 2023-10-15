@@ -17,4 +17,4 @@ runs:
         fetch-depth: 1
     
     - if: ${{ inputs.artifact-type == 'npm' }}
-      uses: ./npm
+      uses: ./.github/workflows/setup-npm
