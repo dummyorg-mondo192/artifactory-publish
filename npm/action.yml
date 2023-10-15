@@ -1,4 +1,7 @@
-steps:    
-  - name: Publish NPM Package
-    run: echo "Publishing NPM Package"
-    shell: bash
+name: NPM
+
+runs:
+  using: composite
+  steps:
+    - if: ${{ inputs.artifact-type == 'npm' }}
+      uses: ./.github/workflows/setup-npm
