@@ -5,3 +5,4 @@ runs:
   steps:
     - name: Publish NPM Artifact
       run: echo "Publishing NPM Artifact"
+      shell: bash
