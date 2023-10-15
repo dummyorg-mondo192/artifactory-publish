@@ -3,5 +3,5 @@ name: NPM
 runs:
   using: composite
   steps:
-    - if: ${{ inputs.artifact-type == 'npm' }}
-      uses: ./.github/workflows/setup-npm
+    - name: Publish NPM Artifact
+      run: echo "Publishing NPM Artifact"
